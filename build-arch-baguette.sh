@@ -40,7 +40,7 @@ KEYRING_TMP="${WORKDIR}/archlinux-keyring-bootstrap"
 mkdir -p "${KEYRING_TMP}"
 
 KEYRING_PKG_URL="$(
-    curl -fsSL "https://archlinux.org/packages/core/any/archlinux-keyring/download/" \
+    curl -fsSL "http://nj.us.mirror.archlinuxarm.org/aarch64/core/archlinux-keyring-20260902-1-any.pkg.tar.xz" \
         -o /dev/null \
         -w "%{url_effective}"
 )"
