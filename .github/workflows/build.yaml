@@ -32,9 +32,9 @@ on:
       - "build-arch-baguette.sh"
 
 jobs:
-  build-x86_64:
-    name: Build x86_64 Arch Baguette image
-    runs-on: ubuntu-26.04
+  build-arm64:
+    name: Build arm64 Arch Baguette image
+    runs-on: ubuntu-26.04-arm64
     permissions:
       contents: read
     steps:
@@ -61,15 +61,15 @@ jobs:
 
       - name: Rename output
         run: |
-          mv out/baguette_arch_rootfs.img.zst "out/arch-baguette-x86_64.img.zst"
+          mv out/baguette_arch_rootfs.img.zst "out/arch-baguette-arm64.img.zst"
           rm -f out/baguette_arch_rootfs.img.zst.sha256
-          sha256sum "out/arch-baguette-x86_64.img.zst" \
-            | tee "out/arch-baguette-x86_64.img.zst.sha256"
+          sha256sum "out/arch-baguette-arm64.img.zst" \
+            | tee "out/arch-baguette-arm64.img.zst.sha256"
 
       - name: Upload image artifact
         uses: actions/upload-artifact@v7
         with:
-          name: arch-baguette-x86_64
+          name: arch-baguette-arm64
           path: |
             out/*.img.zst
             out/*.sha256
