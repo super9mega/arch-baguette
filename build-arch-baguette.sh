@@ -40,7 +40,7 @@ KEYRING_TMP="${WORKDIR}/archlinux-keyring-bootstrap"
 mkdir -p "${KEYRING_TMP}"
 
 KEYRING_PKG_URL="$(
-    curl -fsSL "https://ca.us.mirror.archlinuxarm.org/aarch64/core/archlinuxarm-keyring-20240419-2-any.pkg.tar.xz" \
+    curl -fsSL "http://nj.us.mirror.archlinuxarm.org/aarch64/core/archlinux-keyring-20260902-1-any.pkg.tar.xz" \
         -o /dev/null \
         -w "%{url_effective}"
 )"
@@ -85,7 +85,7 @@ EOF
 cat >"${WORKDIR}/pacman.conf" <<EOF
 [options]
 Architecture = auto
-SigLevel = Required DatabaseOptional
+SigLevel = Never
 LocalFileSigLevel = Optional
 ParallelDownloads = 5
 HoldPkg = pacman glibc
