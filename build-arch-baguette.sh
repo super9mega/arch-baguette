@@ -79,9 +79,7 @@ sudo pacman-key --populate archlinux
 echo "[2/10] Write pacman config"
 
 cat >"${WORKDIR}/mirrorlist" <<'EOF'
-Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
-Server = https://mirror.rackspace.com/archlinux/$repo/os/$arch
-Server = https://mirror.leaseweb.net/archlinux/$repo/os/$arch
+Server = https://mirror.archlinuxarm.org/$arch/$repo
 EOF
 
 cat >"${WORKDIR}/pacman.conf" <<EOF
