@@ -40,7 +40,7 @@ KEYRING_TMP="${WORKDIR}/archlinux-keyring-bootstrap"
 mkdir -p "${KEYRING_TMP}"
 
 KEYRING_PKG_URL="$(
-    curl -fsSL "http://nj.us.mirror.archlinuxarm.org/aarch64/core/archlinux-keyring-20260902-1-any.pkg.tar.xz" \
+    curl -fsSL "https://ca.us.mirror.archlinuxarm.org/aarch64/core/archlinuxarm-keyring-20240419-2-any.pkg.tar.xz" \
         -o /dev/null \
         -w "%{url_effective}"
 )"
@@ -101,6 +101,7 @@ echo "[3/10] Bootstrap Arch rootfs"
 
 ARCH_PACKAGES=(
     base
+    archlinuxarm-keyring
     archlinux-keyring
     systemd-sysvcompat
     sudo
