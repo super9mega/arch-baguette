@@ -79,7 +79,7 @@ sudo pacman-key --populate archlinux
 echo "[2/10] Write pacman config"
 
 cat >"${WORKDIR}/mirrorlist" <<'EOF'
-Server = https://mirror.archlinuxarm.org/$arch/$repo
+Server = http://nj.us.mirror.archlinuxarm.org/$arch/$repo
 EOF
 
 cat >"${WORKDIR}/pacman.conf" <<EOF
